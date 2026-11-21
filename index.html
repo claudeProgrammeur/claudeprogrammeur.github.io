@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>claudeProgrammeur — Développeur Web & Ingénieur IA / Big Data</title>
-    <meta name="description" content="Portfolio de claudeProgrammeur : Développeur Web Django, Ingénieur IA, Big Data et Data Scientist.">
+    <title>Claude TSE (claudeProgrammeur) — Développeur Web & Ingénieur IA / Big Data</title>
+    <meta name="description" content="Portfolio de Claude TSE (claudeProgrammeur) : Développeur Full-Stack Django, Ingénieur IA, Big Data et Data Scientist.">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -57,7 +57,7 @@
             --progress-bg: #e5eaf1;
         }
 
-        * { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -119,12 +119,14 @@
         .navbar-toggler { color: var(--text) !important; }
 
         /* ============================================================
-           HERO + PHOTO DE PROFIL
+           HERO + PHOTO DE PROFIL (ESPACEMENT CORRIGÉ)
            ============================================================ */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
+            padding-top: 125px;
+            padding-bottom: 70px;
             position: relative;
             background:
                 radial-gradient(circle at 20% 30%, var(--hero-glow-1), transparent 40%),
@@ -132,46 +134,46 @@
             transition: background .4s ease;
         }
         .badge-role {
-            position: relative;   /* ✅ À ajouter */
-            top: 30px;            /* ✅ Maintenant ça marche */
             background: rgba(46,158,255,.12);
             color: var(--primary);
             border: 1px solid rgba(46,158,255,.35);
             font-weight: 500;
             padding: .5rem 1rem;
+            display: inline-block;
         }
         .hero h1 { font-weight: 800; font-size: clamp(2rem, 5vw, 3.2rem); }
         .hero .highlight { color: var(--primary); }
         .hero .lead { color: var(--text-muted); max-width: 650px; }
 
-        /* Photo de profil : petit rond */
+        /* Photo de profil : parfaitement centrée dans l'anneau */
         .profile-photo-wrapper {
-            position: relative;   /* ✅ À ajouter */
-            top: 30px;            /* ✅ Maintenant ça marche */
-            width: 130px;
-            height: 130px;
+            position: relative;
+            width: 135px;
+            height: 135px;
             border-radius: 50%;
             padding: 4px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
-            margin-bottom: 1.25rem;
-            transform: translateY(20px);  /* ⬇️ Descend de 20px */
+            margin-bottom: 1.5rem;
         }
         .profile-photo {
-            position: relative;   /* ✅ À ajouter */
-            top: 30px;            /* ✅ Maintenant ça marche */
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             object-fit: cover;
             background: var(--bg-3);
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: 700;
             font-size: 2rem;
             color: var(--primary);
         }
         .profile-status {
             position: absolute;
-            bottom: 6px; right: 6px;
-            width: 22px; height: 22px;
+            bottom: 6px;
+            right: 6px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
             background: #22c55e;
             border: 4px solid var(--bg);
@@ -261,7 +263,7 @@
             color: var(--text-soft);
             border-radius: 50px;
             padding: .35rem .9rem;
-            font-size: .85rem;
+            font-size: .82rem;
             margin: .2rem;
             transition: all .2s ease;
         }
@@ -273,11 +275,12 @@
             border-radius: 10px;
         }
 
-        .project-card { overflow: hidden; height: 100%; }
+        .project-card { overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+        .project-body { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
         .project-img {
-            height: 180px;
+            height: 165px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 3.5rem;
+            font-size: 3.2rem;
         }
         .bg-grad-1 { background: linear-gradient(135deg, #0d3b66, #2e9eff); }
         .bg-grad-2 { background: linear-gradient(135deg, #14532d, #22c55e); }
@@ -349,13 +352,11 @@
         .reveal { opacity: 0; transform: translateY(30px); transition: all .7s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        /* Transition globale douce quand on change de thème */
         .navbar, .about-card, .skill-card, .project-card, .form-control,
         .skill-tag, .social-icon, .theme-toggle, .timeline-item, footer {
             transition: background-color .4s ease, border-color .4s ease, color .4s ease;
         }
     </style>
-<base>
 </head>
 <body>
 
@@ -366,7 +367,6 @@
             <i class="bi bi-code-slash"></i> claudeProgrammeur
         </a>
         <div class="d-flex align-items-center order-lg-2">
-            <!-- Bouton bascule thème -->
             <button class="theme-toggle me-2" id="themeToggle" aria-label="Changer de thème" title="Mode clair / sombre">
                 <i class="bi bi-sun-fill" id="themeIcon"></i>
             </button>
@@ -393,35 +393,32 @@
         <div class="row align-items-center">
             <div class="col-lg-8">
 
-                <!-- PHOTO DE PROFIL (petit rond) -->
-                <!-- Mets ta photo dans le même dossier sous le nom "photo.jpg" -->
-                <!-- ou remplace "photo.jpg" ci-dessous par le chemin de ton image -->
+                <!-- PHOTO DE PROFIL : dépose ta photo sous le nom "photo.jpg" dans le dépôt GitHub -->
                 <div class="profile-photo-wrapper">
-                    <img src="photo.jpg" alt="Photo de claudeProgrammeur" class="profile-photo"
-                         onerror="this.outerHTML='<div class=\'profile-photo\'>CP</div>'">
+                    <img src="photo.jpg" alt="Photo de Claude TSE" class="profile-photo"
+                         onerror="this.outerHTML='<div class=\'profile-photo\'>CT</div>'">
                     <span class="profile-status" title="Disponible"></span>
                 </div>
 
-                <span class="badge badge-role rounded-pill mb-3">Disponible pour de nouveaux projets</span>
+                <span class="badge badge-role rounded-pill mb-3">Disponible pour de nouveaux projets & opportunités</span>
                 <h1 class="mb-3">
-                    Bonjour, je suis <span class="highlight code-font">claudeProgrammeur</span><span class="terminal-cursor">_</span>
+                    Bonjour, je suis <span class="highlight code-font">Claude TSE</span><span class="terminal-cursor">_</span>
                 </h1>
-                <h4 class="mb-3" style="color: var(--text-muted);">Développeur Web · Ingénieur IA & Big Data · Data Scientist</h4>
+                <h4 class="mb-3" style="color: var(--text-muted);">Développeur Full-Stack · Ingénieur IA & Big Data · Data Scientist</h4>
                 <p class="lead mb-4">
-                    Je transforme des <strong class="text-white">données brutes</strong> en solutions intelligentes :
-                    applications web avec <strong class="text-white">Django</strong>, modèles de
-                    <strong class="text-white">Machine Learning</strong> et <strong class="text-white">Deep Learning</strong>,
-                    pipelines <strong class="text-white">Big Data avec PySpark</strong> et tableaux de bord
-                    <strong class="text-white">Power BI</strong> pour aider les entreprises à prendre de meilleures décisions.
+                    Je conçois des <strong class="text-white">applications SaaS intelligentes</strong> et je transforme des
+                    <strong class="text-white">données brutes</strong> en décisions concrètes : architecture web avec
+                    <strong class="text-white">Django & React</strong>, modèles de <strong class="text-white">Machine Learning / Deep Learning</strong>,
+                    pipelines <strong class="text-white">Big Data (PySpark)</strong> et tableaux de bord <strong class="text-white">Power BI</strong>.
                 </p>
                 <div class="d-flex flex-wrap gap-3 mb-4">
                     <a href="#projets" class="btn btn-primary-custom"><i class="bi bi-rocket-takeoff me-2"></i>Voir mes projets</a>
                     <a href="#contact" class="btn btn-outline-custom"><i class="bi bi-envelope me-2"></i>Me contacter</a>
                 </div>
                 <div class="d-flex gap-3">
-                    <a href="https://github.com/claudeProgrammeur" target="_blank" class="social-icon"><i class="bi bi-github"></i></a>
-                    <a href="https://www.linkedin.com/in/claudeAtsou" target="_blank" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                    <a href="mailto:claudeatsou54@gmail.com" class="social-icon"><i class="bi bi-envelope-fill"></i></a>
+                    <a href="https://github.com/claudeProgrammeur" target="_blank" class="social-icon" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://www.linkedin.com/in/claudeAtsou" target="_blank" class="social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="mailto:claudeatsou54@gmail.com" class="social-icon" title="Email"><i class="bi bi-envelope-fill"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 text-center d-none d-lg-block">
@@ -429,10 +426,10 @@
                     <div class="fs-1 mb-3"><i class="bi bi-terminal-fill" style="color: var(--primary);"></i></div>
                     <div class="text-start" style="font-size: .85rem; line-height: 2;">
                         <span style="color:#22c55e;">$</span> <span style="color: var(--text-soft);">whoami</span><br>
-                        <span style="color: var(--primary);">claudeProgrammeur</span><br>
-                        <span style="color:#22c55e;">$</span> <span style="color: var(--text-soft);">skills --list</span><br>
-                        <span style="color: var(--accent);">django, fastapi, ml, dl,</span><br>
-                        <span style="color: var(--accent);">spark, sql, powerbi</span><br>
+                        <span style="color: var(--primary);">Claude TSE (@claudeProgrammeur)</span><br>
+                        <span style="color:#22c55e;">$</span> <span style="color: var(--text-soft);">skills --stack</span><br>
+                        <span style="color: var(--accent);">django, react, celery, docker,</span><br>
+                        <span style="color: var(--accent);">ml, dl, pyspark, sql, powerbi</span><br>
                         <span style="color:#22c55e;">$</span> <span style="color: var(--text-soft);">./run --mission</span><br>
                         <span style="color:#f59e0b;">"data -> insights -> value"</span><br>
                         <span style="color:#22c55e;">$</span> <span class="terminal-cursor">▊</span>
@@ -454,11 +451,12 @@
             <div class="col-md-4 reveal">
                 <div class="about-card p-4">
                     <div class="about-icon mb-3"><i class="bi bi-globe"></i></div>
-                    <h5>Développeur Web</h5>
+                    <h5>Développeur Web & SaaS</h5>
                     <p class="text-white-50">
-                        Je construis des applications web complètes et modernes avec
-                        <strong class="text-white">Django</strong>, <strong class="text-white">Bootstrap</strong> et des API REST
-                        (<strong class="text-white">Django REST Framework</strong>, <strong class="text-white">FastAPI</strong> en cours d'apprentissage).
+                        Je développe des plateformes web complètes et évolutives avec
+                        <strong class="text-white">Django</strong>, <strong class="text-white">React</strong>,
+                        <strong class="text-white">Celery / Redis</strong> et <strong class="text-white">Docker</strong>,
+                        incluant l'intégration d'APIs REST et de passerelles de paiement.
                     </p>
                 </div>
             </div>
@@ -467,20 +465,20 @@
                     <div class="about-icon mb-3"><i class="bi bi-cpu"></i></div>
                     <h5>Ingénieur IA & Big Data</h5>
                     <p class="text-white-50">
-                        Je développe des modèles de <strong class="text-white">Machine Learning</strong> et
-                        <strong class="text-white">Deep Learning</strong> et je traite de grands volumes de données avec
-                        <strong class="text-white">Spark (PySpark)</strong>.
+                        Je conçois des modèles de <strong class="text-white">Machine Learning</strong>,
+                        <strong class="text-white">Deep Learning (LSTM, NLP)</strong> et des architectures
+                        <strong class="text-white">Big Data avec PySpark</strong> pour automatiser l'analyse prédictive.
                     </p>
                 </div>
             </div>
             <div class="col-md-4 reveal">
                 <div class="about-card p-4">
                     <div class="about-icon mb-3"><i class="bi bi-bar-chart-line"></i></div>
-                    <h5>Data Scientist</h5>
+                    <h5>Data Scientist & BI</h5>
                     <p class="text-white-50">
-                        J'analyse, je nettoie et je visualise les données avec
-                        <strong class="text-white">Power BI/Excel</strong>,<strong class="text-white">matplotlib/seaborn</strong>, <strong class="text-white">Excel</strong> et
-                        <strong class="text-white">SQL</strong> (PostgreSQL, MySQL) pour les rendre utiles aux entreprises.
+                        J'analyse, nettoie et modélise les données avec <strong class="text-white">Python</strong>,
+                        <strong class="text-white">SQL</strong> (PostgreSQL, MySQL), <strong class="text-white">Power BI</strong> et
+                        <strong class="text-white">Excel</strong> pour orienter la stratégie des entreprises.
                     </p>
                 </div>
             </div>
@@ -498,62 +496,63 @@
 
         <div class="row g-4 mb-5">
             <div class="col-lg-4 reveal">
-                <div class="skill-card p-4">
-                    <h5 class="mb-3"><i class="bi bi-code-slash me-2" style="color: var(--primary);"></i>Développement Web</h5>
+                <div class="skill-card p-4 h-100">
+                    <h5 class="mb-3"><i class="bi bi-code-slash me-2" style="color: var(--primary);"></i>Développement Web & SaaS</h5>
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">Django</span>
-                    <span class="skill-tag">Bootstrap</span>
-                    <span class="skill-tag">FastAPI (en cours)</span>
                     <span class="skill-tag">Django REST Framework</span>
-                    <span class="skill-tag">HTML5 / CSS3</span>
-                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">React / Vite</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">HTML5 / CSS3 / JS</span>
                 </div>
             </div>
             <div class="col-lg-4 reveal">
-                <div class="skill-card p-4">
+                <div class="skill-card p-4 h-100">
                     <h5 class="mb-3"><i class="bi bi-robot me-2" style="color: var(--primary);"></i>IA & Data Science</h5>
                     <span class="skill-tag">Machine Learning</span>
-                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">Deep Learning (LSTM)</span>
+                    <span class="skill-tag">NLP / Embeddings</span>
                     <span class="skill-tag">scikit-learn</span>
-                    <span class="skill-tag">PyTorch</span>
-                    <span class="skill-tag">Pandas / NumPy/ETL/SEABORN/AIRFLOW</span>
+                    <span class="skill-tag">PyTorch / TensorFlow</span>
+                    <span class="skill-tag">Pandas / NumPy / Seaborn</span>
                 </div>
             </div>
             <div class="col-lg-4 reveal">
-                <div class="skill-card p-4">
-                    <h5 class="mb-3"><i class="bi bi-database me-2" style="color: var(--primary);"></i>Big Data & Bases de données</h5>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">MySQL</span>
+                <div class="skill-card p-4 h-100">
+                    <h5 class="mb-3"><i class="bi bi-database me-2" style="color: var(--primary);"></i>Big Data & Architecture</h5>
                     <span class="skill-tag">Spark (PySpark)</span>
-                    <span class="skill-tag">ETL & Pipelines</span>
+                    <span class="skill-tag">SQL / PostgreSQL / MySQL</span>
+                    <span class="skill-tag">Celery & Redis</span>
+                    <span class="skill-tag">Docker / Docker Compose</span>
+                    <span class="skill-tag">ETL & Airflow</span>
                 </div>
             </div>
             <div class="col-lg-4 reveal">
-                <div class="skill-card p-4">
-                    <h5 class="mb-3"><i class="bi bi-pie-chart me-2" style="color: var(--primary);"></i>BI & Outils bureautiques</h5>
+                <div class="skill-card p-4 h-100">
+                    <h5 class="mb-3"><i class="bi bi-pie-chart me-2" style="color: var(--primary);"></i>BI & Outils décisionnels</h5>
                     <span class="skill-tag">Power BI</span>
-                    <span class="skill-tag">Excel</span>
-                    <span class="skill-tag">Word</span>
-                    <span class="skill-tag">Rapports & Dashboards</span>
+                    <span class="skill-tag">Excel avancé</span>
+                    <span class="skill-tag">Dashboards interactifs</span>
+                    <span class="skill-tag">Reporting</span>
                 </div>
             </div>
             <div class="col-lg-4 reveal">
-                <div class="skill-card p-4">
+                <div class="skill-card p-4 h-100">
                     <h5 class="mb-3"><i class="bi bi-graph-up-arrow me-2" style="color: var(--primary);"></i>Analyse de données</h5>
-                    <span class="skill-tag">Analyse exploratoire</span>
-                    <span class="skill-tag">Nettoyage de données</span>
-                    <span class="skill-tag">Visualisation</span>
+                    <span class="skill-tag">Analyse exploratoire (EDA)</span>
+                    <span class="skill-tag">Feature Engineering</span>
+                    <span class="skill-tag">Prédiction & Scoring</span>
                     <span class="skill-tag">Statistiques</span>
                 </div>
             </div>
             <div class="col-lg-4 reveal">
-                <div class="skill-card p-4">
-                    <h5 class="mb-3"><i class="bi bi-git me-2" style="color: var(--primary);"></i>Outils de développement</h5>
+                <div class="skill-card p-4 h-100">
+                    <h5 class="mb-3"><i class="bi bi-git me-2" style="color: var(--primary);"></i>DevOps & Outils</h5>
                     <span class="skill-tag">Git / GitHub</span>
-                    <span class="skill-tag">API REST</span>
-                    <span class="skill-tag">Jupyter Notebook</span>
-                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">WebSockets / Daphne</span>
+                    <span class="skill-tag">API Paiement (Mobile Money)</span>
+                    <span class="skill-tag">Jupyter / VS Code</span>
                 </div>
             </div>
         </div>
@@ -561,7 +560,7 @@
         <div class="row g-4">
             <div class="col-lg-6 reveal">
                 <div class="mb-4">
-                    <div class="d-flex justify-content-between mb-2"><span>Python & Django</span><span>90%</span></div>
+                    <div class="d-flex justify-content-between mb-2"><span>Python, Django & APIs REST</span><span>90%</span></div>
                     <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
                 </div>
                 <div class="mb-4">
@@ -575,16 +574,16 @@
             </div>
             <div class="col-lg-6 reveal">
                 <div class="mb-4">
-                    <div class="d-flex justify-content-between mb-2"><span>Power BI & Excel</span><span>87%</span></div>
+                    <div class="d-flex justify-content-between mb-2"><span>Power BI & Analyse de Données</span><span>87%</span></div>
                     <div class="progress"><div class="progress-bar" style="width: 87%"></div></div>
                 </div>
                 <div class="mb-4">
-                    <div class="d-flex justify-content-between mb-2"><span>Spark (PySpark) & Big Data</span><span>75%</span></div>
-                    <div class="progress"><div class="progress-bar" style="width: 75%"></div></div>
+                    <div class="d-flex justify-content-between mb-2"><span>Spark (PySpark), Celery & Docker</span><span>80%</span></div>
+                    <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
                 </div>
                 <div class="mb-4">
-                    <div class="d-flex justify-content-between mb-2"><span>FastAPI & API REST</span><span>70%</span></div>
-                    <div class="progress"><div class="progress-bar" style="width: 70%"></div></div>
+                    <div class="d-flex justify-content-between mb-2"><span>React & Front-End Moderne</span><span>75%</span></div>
+                    <div class="progress"><div class="progress-bar" style="width: 75%"></div></div>
                 </div>
             </div>
         </div>
@@ -600,7 +599,7 @@
                 <p class="text-white-50 mb-0">Projets réalisés</p>
             </div>
             <div class="col-6 col-md-3 reveal">
-                <div class="stat-number"><span class="counter" data-target="10">0</span>+</div>
+                <div class="stat-number"><span class="counter" data-target="15">0</span>+</div>
                 <p class="text-white-50 mb-0">Technologies maîtrisées</p>
             </div>
             <div class="col-6 col-md-3 reveal">
@@ -609,84 +608,129 @@
             </div>
             <div class="col-6 col-md-3 reveal">
                 <div class="stat-number"><span class="counter" data-target="5">0</span>+</div>
-                <p class="text-white-50 mb-0">Dashboards Power BI/EXCEL</p>
+                <p class="text-white-50 mb-0">Dashboards Power BI / Excel</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ================= PROJETS ================= -->
+<!-- ================= PROJETS CONCRETS ================= -->
 <section id="projets">
     <div class="container">
         <div class="text-center mb-5 reveal">
             <p class="section-subtitle">Projets</p>
-            <h2 class="section-title">Mes réalisations</h2>
-            <p class="text-white-50">Un aperçu de ce que je construis : du web, de l'IA et de la data.</p>
+            <h2 class="section-title">Mes réalisations phares</h2>
+            <p class="text-white-50">Des applications réelles combinant développement web, intelligence artificielle et traitement de données.</p>
         </div>
         <div class="row g-4">
 
+            <!-- Projet 1 -->
             <div class="col-md-6 col-lg-4 reveal">
                 <div class="project-card">
-                    <div class="project-img bg-grad-1"><i class="bi bi-window text-white"></i></div>
-                    <div class="p-4">
-                        <h5>Application Web Django</h5>
-                        <p class="text-white-50">Applications web dynamiques et responsives avec Django, Bootstrap et PostgreSQL/MySQL.</p>
-                        <span class="skill-tag">Django</span><span class="skill-tag">Bootstrap</span><span class="skill-tag">PostgreSQL</span>
+                    <div class="project-img bg-grad-1"><i class="bi bi-airplane-engines text-white"></i></div>
+                    <div class="p-4 project-body">
+                        <div>
+                            <h5>AeroPredict Pro</h5>
+                            <p class="text-white-50">Plateforme SaaS de maintenance prédictive industrielle utilisant des réseaux de neurones profonds (LSTM) pour détecter les anomalies avant la panne.</p>
+                        </div>
+                        <div>
+                            <div class="mb-3">
+                                <span class="skill-tag">Django</span><span class="skill-tag">Deep Learning</span><span class="skill-tag">LSTM</span><span class="skill-tag">API</span>
+                            </div>
+                            <a href="https://github.com/claudeProgrammeur/aeropredict-pro" target="_blank" class="btn btn-sm btn-outline-custom w-100">
+                                <i class="bi bi-github me-1"></i>Voir le code sur GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Projet 2 -->
             <div class="col-md-6 col-lg-4 reveal">
                 <div class="project-card">
-                    <div class="project-img bg-grad-2"><i class="bi bi-plug text-white"></i></div>
-                    <div class="p-4">
-                        <h5>API REST modernes</h5>
-                        <p class="text-white-50">API robustes avec Django REST Framework et FastAPI pour connecter apps et modèles IA.</p>
-                        <span class="skill-tag">DRF</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Python</span>
+                    <div class="project-img bg-grad-3"><i class="bi bi-people-fill text-white"></i></div>
+                    <div class="p-4 project-body">
+                        <div>
+                            <h5>ChurnForest AI</h5>
+                            <p class="text-white-50">Application SaaS d'analyse et de prédiction du taux d'attrition client (churn) sur des données retail massives via Spark, PCA et embeddings NLP.</p>
+                        </div>
+                        <div>
+                            <div class="mb-3">
+                                <span class="skill-tag">Django</span><span class="skill-tag">PySpark</span><span class="skill-tag">NLP</span><span class="skill-tag">Celery</span>
+                            </div>
+                            <a href="https://github.com/claudeProgrammeur?tab=repositories" target="_blank" class="btn btn-sm btn-outline-custom w-100">
+                                <i class="bi bi-github me-1"></i>Explorer sur GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Projet 3 -->
             <div class="col-md-6 col-lg-4 reveal">
                 <div class="project-card">
-                    <div class="project-img bg-grad-3"><i class="bi bi-robot text-white"></i></div>
-                    <div class="p-4">
-                        <h5>Modèles ML / DL</h5>
-                        <p class="text-white-50">Prédiction, classification et analyse prédictive avec scikit-learn, TensorFlow et PyTorch.</p>
-                        <span class="skill-tag">ML</span><span class="skill-tag">DL</span><span class="skill-tag">scikit-learn</span>
+                    <div class="project-img bg-grad-2"><i class="bi bi-chat-dots-fill text-white"></i></div>
+                    <div class="p-4 project-body">
+                        <div>
+                            <h5>Vorraas & Chatbot IA Entreprise</h5>
+                            <p class="text-white-50">Architecture SaaS multi-services en temps réel intégrant l'IA générative (Gemini), WebSockets, files asynchrones Celery/Redis et gestion d'abonnements.</p>
+                        </div>
+                        <div>
+                            <div class="mb-3">
+                                <span class="skill-tag">Django</span><span class="skill-tag">Redis</span><span class="skill-tag">Docker</span><span class="skill-tag">GenAI</span>
+                            </div>
+                            <a href="https://github.com/claudeProgrammeur?tab=repositories" target="_blank" class="btn btn-sm btn-outline-custom w-100">
+                                <i class="bi bi-github me-1"></i>Explorer sur GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Projet 4 -->
             <div class="col-md-6 col-lg-4 reveal">
                 <div class="project-card">
-                    <div class="project-img bg-grad-4"><i class="bi bi-lightning-charge text-white"></i></div>
-                    <div class="p-4">
-                        <h5>Pipelines Big Data</h5>
-                        <p class="text-white-50">Traitement de grands volumes de données avec Spark (PySpark) et pipelines ETL.</p>
-                        <span class="skill-tag">PySpark</span><span class="skill-tag">ETL</span><span class="skill-tag">Big Data</span>
+                    <div class="project-img bg-grad-4"><i class="bi bi-graph-up text-white"></i></div>
+                    <div class="p-4 project-body">
+                        <div>
+                            <h5>Système Prédictif des Ventes SMS</h5>
+                            <p class="text-white-50">Outil d'aide à la décision développé en entreprise (ADKONTACT) pour analyser les campagnes SMS et prédire l'impact sur les ventes.</p>
+                        </div>
+                        <div>
+                            <span class="skill-tag">Python</span><span class="skill-tag">Machine Learning</span><span class="skill-tag">Data Science</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Projet 5 -->
             <div class="col-md-6 col-lg-4 reveal">
                 <div class="project-card">
-                    <div class="project-img bg-grad-5"><i class="bi bi-bar-chart-fill text-white"></i></div>
-                    <div class="p-4">
-                        <h5>Dashboards Power BI</h5>
-                        <p class="text-white-50">Tableaux de bord interactifs et rapports Excel pour la prise de décision d'entreprise.</p>
-                        <span class="skill-tag">Power BI</span><span class="skill-tag">Excel</span><span class="skill-tag">Dataviz</span>
+                    <div class="project-img bg-grad-5"><i class="bi bi-mortarboard-fill text-white"></i></div>
+                    <div class="p-4 project-body">
+                        <div>
+                            <h5>SaaS de Gestion Scolaire</h5>
+                            <p class="text-white-50">Application web complète dédiée à la digitalisation des établissements scolaires : suivi académique, gestion administrative et tableaux de bord.</p>
+                        </div>
+                        <div>
+                            <span class="skill-tag">Django</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">Bootstrap</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Projet 6 -->
             <div class="col-md-6 col-lg-4 reveal">
                 <div class="project-card">
-                    <div class="project-img bg-grad-6"><i class="bi bi-database-fill text-white"></i></div>
-                    <div class="p-4">
-                        <h5>Bases de données & SQL</h5>
-                        <p class="text-white-50">Conception de schémas, requêtes SQL optimisées et administration PostgreSQL / MySQL.</p>
-                        <span class="skill-tag">SQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span>
+                    <div class="project-img bg-grad-6"><i class="bi bi-bar-chart-fill text-white"></i></div>
+                    <div class="p-4 project-body">
+                        <div>
+                            <h5>Dashboards BI & Reporting</h5>
+                            <p class="text-white-50">Conception de tableaux de bord décisionnels interactifs sous Power BI et Excel pour le pilotage des indicateurs clés de performance (KPI).</p>
+                        </div>
+                        <div>
+                            <span class="skill-tag">Power BI</span><span class="skill-tag">SQL</span><span class="skill-tag">Excel</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -695,7 +739,7 @@
 
         <div class="text-center mt-5 reveal">
             <a href="https://github.com/claudeProgrammeur?tab=repositories" target="_blank" class="btn btn-outline-custom">
-                <i class="bi bi-github me-2"></i>Voir tous mes projets sur GitHub
+                <i class="bi bi-github me-2"></i>Voir tous mes dépôts sur GitHub
             </a>
         </div>
     </div>
@@ -711,24 +755,24 @@
         <div class="row">
             <div class="col-lg-8 mx-auto">
                 <div class="timeline-item reveal">
-                    <h5>Développeur Web</h5>
-                    <p class="text-white-50 mb-1">Django · Bootstrap · DRF</p>
-                    <p class="text-white-50">Conception d'applications web complètes : front-end Bootstrap, back-end Django, APIs avec Django REST Framework, bases PostgreSQL/MySQL.</p>
+                    <h5>Développeur Full-Stack & Architecture SaaS</h5>
+                    <p class="text-white-50 mb-1">Django · React · Celery · Docker · APIs REST</p>
+                    <p class="text-white-50">Conception de plateformes SaaS complètes : back-end Django, tâches asynchrones avec Celery & Redis, conteneurisation Docker et intégration de paiements en ligne.</p>
                 </div>
                 <div class="timeline-item reveal">
-                    <h5>Data Scientist & Analyste</h5>
-                    <p class="text-white-50 mb-1">ML · DL · Power BI · Excel</p>
-                    <p class="text-white-50">Analyse de données, construction de modèles ML/DL et création de dashboards Power BI pour transformer les données en décisions business.</p>
+                    <h5>Data Scientist & Ingénieur IA</h5>
+                    <p class="text-white-50 mb-1">Machine Learning · Deep Learning · NLP · Power BI</p>
+                    <p class="text-white-50">Développement de modèles prédictifs (LSTM, Random Forest, NLP) et création de dashboards décisionnels pour transformer les données en valeur ajoutée.</p>
                 </div>
                 <div class="timeline-item reveal">
-                    <h5>Ingénieur Big Data</h5>
-                    <p class="text-white-50 mb-1">Spark (PySpark) · SQL · Pipelines ETL</p>
-                    <p class="text-white-50">Traitement de grands volumes de données, pipelines distribués et architecture de données.</p>
+                    <h5>Licence Professionnelle en Informatique (ESGIS) & Expérience Terrain</h5>
+                    <p class="text-white-50 mb-1">Génie Logiciel · Bases de Données · Big Data (PySpark)</p>
+                    <p class="text-white-50">Formation supérieure en informatique complétée par des expériences pratiques en entreprise (développement de systèmes prédictifs et d'infrastructures IA).</p>
                 </div>
                 <div class="timeline-item reveal" style="border-left-color: var(--primary);">
-                    <h5 style="color: var(--primary);"><i class="bi bi-rocket-takeoff me-2"></i>Aujourd'hui & demain</h5>
-                    <p class="text-white-50 mb-1">FastAPI · APIs modernes · IA en production</p>
-                    <p class="text-white-50">Apprentissage de FastAPI pour déployer des API modernes et performantes, et mise en production de modèles IA à grande échelle.</p>
+                    <h5 style="color: var(--primary);"><i class="bi bi-rocket-takeoff me-2"></i>Aujourd'hui & Objectifs</h5>
+                    <p class="text-white-50 mb-1">IA en production · Cloud & Big Data · Master International</p>
+                    <p class="text-white-50">Déploiement de solutions SaaS intelligentes à grande échelle et poursuite vers une spécialisation avancée en Intelligence Artificielle et Data Science.</p>
                 </div>
             </div>
         </div>
@@ -750,9 +794,7 @@
                     <p class="text-white-50"><i class="bi bi-envelope me-2" style="color: var(--primary);"></i> claudeatsou54@gmail.com</p>
                     <p class="text-white-50"><i class="bi bi-github me-2" style="color: var(--primary);"></i> github.com/claudeProgrammeur</p>
                     <p class="text-white-50"><i class="bi bi-linkedin me-2" style="color: var(--primary);"></i> linkedin.com/in/claudeAtsou</p>
-
-                    <!-- LOCALISATION — OPTIONNELLE : supprime ce bloc si tu ne veux pas l'afficher -->
-                    <p class="text-white-50"><i class="bi bi-geo-alt me-2" style="color: var(--primary);"></i> Togo · Disponible à distance / freelance</p>
+                    <p class="text-white-50"><i class="bi bi-geo-alt me-2" style="color: var(--primary);"></i> Lomé, Togo · Disponible à distance / freelance</p>
 
                     <hr style="border-color: var(--border);">
                     <div class="d-flex gap-3">
@@ -765,22 +807,18 @@
             <div class="col-lg-7 reveal">
                 <div class="about-card p-4">
 
-                    <!-- Alertes du formulaire -->
-                    <!-- <div class="form-alert success" id="formSuccess">
-                        <i class="bi bi-check-circle me-2"></i>Message envoyé avec succès ! Je te réponds très vite. ✅
+                    <!-- Alertes du formulaire (désormais actives !) -->
+                    <div class="form-alert success" id="formSuccess">
+                        <i class="bi bi-check-circle me-2"></i>Message envoyé avec succès ! Je te réponds très vite.
                     </div>
                     <div class="form-alert error" id="formError">
-                        <i class="bi bi-exclamation-triangle me-2"></i>Une erreur est survenue. Réessaie ou écris-moi directement par email.
-                    </div> -->
+                        <i class="bi bi-exclamation-triangle me-2"></i>Erreur d'envoi. Écris-moi directement à <strong>claudeatsou54@gmail.com</strong>.
+                    </div>
 
-                    <!-- FORMULAIRE FONCTIONNEL via FormSubmit (envoi direct sur ton email) -->
-                    <form id="contactForm" action="https://formsubmit.co/claudeatsou54@gmail.com" method="POST">
-                        <!-- Champs cachés de configuration FormSubmit -->
+                    <form id="contactForm" action="https://formsubmit.co/ajax/claudeatsou54@gmail.com" method="POST">
                         <input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio !">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_replyto">
-                        <!-- Piège anti-spam (invisible) -->
                         <input type="text" name="_honey" style="display:none">
 
                         <div class="row g-3">
@@ -790,7 +828,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" name="Email" placeholder="votre@email.com" required>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="votre@email.com" required>
                             </div>
                             <div class="col-12">
                                 <label for="sujet" class="form-label">Sujet</label>
@@ -817,9 +855,9 @@
 <!-- ================= FOOTER ================= -->
 <footer class="text-center">
     <div class="container">
-        <p class="code-font mb-1" style="color: var(--primary);">claudeProgrammeur</p>
-        <p class="mb-0">Développeur Web · Ingénieur IA & Big Data · Data Scientist</p>
-        <p class="mt-2 mb-0" style="font-size: .85rem;">© 2026 claudeProgrammeur — Fait avec <i class="bi bi-heart-fill" style="color: var(--primary);"></i> et beaucoup de Python</p>
+        <p class="code-font mb-1" style="color: var(--primary);">Claude TSE · claudeProgrammeur</p>
+        <p class="mb-0">Développeur Full-Stack · Ingénieur IA & Big Data · Data Scientist</p>
+        <p class="mt-2 mb-0" style="font-size: .85rem;">© 2026 Claude TSE — Propulsé par Python & GitHub Pages</p>
     </div>
 </footer>
 
@@ -827,14 +865,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    /* ============================================================
-       1. TOGGLE MODE SOMBRE / CLAIR
-       ============================================================ */
+    /* 1. TOGGLE MODE SOMBRE / CLAIR */
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     const root = document.documentElement;
 
-    // Charger le thème sauvegardé (ou celui du système)
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         root.setAttribute('data-theme', savedTheme);
@@ -846,7 +881,7 @@
     themeToggle.addEventListener('click', () => {
         const newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme); // mémorisé même après fermeture
+        localStorage.setItem('theme', newTheme);
         updateThemeIcon();
     });
 
@@ -855,9 +890,7 @@
         themeIcon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
     }
 
-    /* ============================================================
-       2. ANIMATION D'APPARITION AU SCROLL
-       ============================================================ */
+    /* 2. ANIMATION D'APPARITION AU SCROLL */
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -865,9 +898,7 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    /* ============================================================
-       3. COMPTEURS ANIMÉS
-       ============================================================ */
+    /* 3. COMPTEURS ANIMÉS */
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -886,29 +917,22 @@
     }, { threshold: 0.5 });
     document.querySelectorAll('.counter').forEach(c => counterObserver.observe(c));
 
-    /* ============================================================
-       4. FORMULAIRE DE CONTACT FONCTIONNEL
-       Envoi réel des messages vers claudeatsou54@gmail.com
-       via FormSubmit (aucun backend nécessaire).
-       ============================================================ */
+    /* 4. FORMULAIRE DE CONTACT CORRIGÉ (AJAX FormSubmit) */
     const contactForm = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     const btnText = document.getElementById('btnText');
     const btnLoading = document.getElementById('btnLoading');
+    const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
 
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Afficher l'état "envoi en cours"
         submitBtn.disabled = true;
         btnText.style.display = 'none';
         btnLoading.style.display = 'inline';
-        document.getElementById('formSuccess').className = 'form-alert';
-        document.getElementById('formError').className = 'form-alert';
-
-        // Configurer le champ reply-to avec l'email du visiteur
-        const emailInput = document.getElementById('email');
-        contactForm.querySelector('input[name=_replyto]').value = emailInput.value;
+        formSuccess.className = 'form-alert';
+        formError.className = 'form-alert';
 
         const formData = new FormData(contactForm);
 
@@ -918,15 +942,16 @@
                 body: formData,
                 headers: { 'Accept': 'application/json' }
             });
+            const result = await response.json();
 
-            if (response.ok) {
-                document.getElementById('formSuccess').className = 'form-alert success';
+            if (response.ok && (result.success === "true" || result.success === true)) {
+                formSuccess.className = 'form-alert success';
                 contactForm.reset();
             } else {
-                throw new Error('Erreur serveur');
+                throw new Error('Activation requise ou erreur FormSubmit');
             }
         } catch (error) {
-            document.getElementById('formError').className = 'form-alert error';
+            formError.className = 'form-alert error';
         } finally {
             submitBtn.disabled = false;
             btnText.style.display = 'inline';
@@ -934,9 +959,7 @@
         }
     });
 
-    /* ============================================================
-       5. FERMER LE MENU MOBILE APRÈS UN CLIC
-       ============================================================ */
+    /* 5. FERMER LE MENU MOBILE APRÈS UN CLIC */
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             const menu = document.getElementById('menu');
