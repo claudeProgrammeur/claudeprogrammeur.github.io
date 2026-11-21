@@ -145,15 +145,18 @@
         /* Photo de profil : petit rond */
         .profile-photo-wrapper {
             position: relative;
-            width: 130px; height: 130px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             padding: 4px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             margin-bottom: 1.25rem;
+            transform: translateY(20px);  /* ⬇️ Descend de 20px */
         }
         .profile-photo {
             width: 100%; height: 100%;
             border-radius: 50%;
+            top:10px;
             object-fit: cover;
             background: var(--bg-3);
             display: flex; align-items: center; justify-content: center;
@@ -348,7 +351,7 @@
             transition: background-color .4s ease, border-color .4s ease, color .4s ease;
         }
     </style>
-<base target="_blank">
+<base>
 </head>
 <body>
 
@@ -472,7 +475,7 @@
                     <h5>Data Scientist</h5>
                     <p class="text-white-50">
                         J'analyse, je nettoie et je visualise les données avec
-                        <strong class="text-white">Power BI</strong>, <strong class="text-white">Excel</strong> et
+                        <strong class="text-white">Power BI/Excel</strong>,<strong class="text-white">matplotlib/seaborn</strong>, <strong class="text-white">Excel</strong> et
                         <strong class="text-white">SQL</strong> (PostgreSQL, MySQL) pour les rendre utiles aux entreprises.
                     </p>
                 </div>
@@ -508,9 +511,8 @@
                     <span class="skill-tag">Machine Learning</span>
                     <span class="skill-tag">Deep Learning</span>
                     <span class="skill-tag">scikit-learn</span>
-                    <span class="skill-tag">TensorFlow / Keras</span>
                     <span class="skill-tag">PyTorch</span>
-                    <span class="skill-tag">Pandas / NumPy</span>
+                    <span class="skill-tag">Pandas / NumPy/ETL/SEABORN/AIRFLOW</span>
                 </div>
             </div>
             <div class="col-lg-4 reveal">
@@ -527,7 +529,7 @@
                 <div class="skill-card p-4">
                     <h5 class="mb-3"><i class="bi bi-pie-chart me-2" style="color: var(--primary);"></i>BI & Outils bureautiques</h5>
                     <span class="skill-tag">Power BI</span>
-                    <span class="skill-tag">Excel avancé</span>
+                    <span class="skill-tag">Excel</span>
                     <span class="skill-tag">Word</span>
                     <span class="skill-tag">Rapports & Dashboards</span>
                 </div>
@@ -590,11 +592,11 @@
     <div class="container">
         <div class="row text-center g-4">
             <div class="col-6 col-md-3 reveal">
-                <div class="stat-number"><span class="counter" data-target="20">0</span>+</div>
+                <div class="stat-number"><span class="counter" data-target="12">0</span>+</div>
                 <p class="text-white-50 mb-0">Projets réalisés</p>
             </div>
             <div class="col-6 col-md-3 reveal">
-                <div class="stat-number"><span class="counter" data-target="15">0</span>+</div>
+                <div class="stat-number"><span class="counter" data-target="10">0</span>+</div>
                 <p class="text-white-50 mb-0">Technologies maîtrisées</p>
             </div>
             <div class="col-6 col-md-3 reveal">
@@ -603,7 +605,7 @@
             </div>
             <div class="col-6 col-md-3 reveal">
                 <div class="stat-number"><span class="counter" data-target="5">0</span>+</div>
-                <p class="text-white-50 mb-0">Dashboards Power BI</p>
+                <p class="text-white-50 mb-0">Dashboards Power BI/EXCEL</p>
             </div>
         </div>
     </div>
@@ -760,12 +762,12 @@
                 <div class="about-card p-4">
 
                     <!-- Alertes du formulaire -->
-                    <div class="form-alert success" id="formSuccess">
+                    <!-- <div class="form-alert success" id="formSuccess">
                         <i class="bi bi-check-circle me-2"></i>Message envoyé avec succès ! Je te réponds très vite. ✅
                     </div>
                     <div class="form-alert error" id="formError">
                         <i class="bi bi-exclamation-triangle me-2"></i>Une erreur est survenue. Réessaie ou écris-moi directement par email.
-                    </div>
+                    </div> -->
 
                     <!-- FORMULAIRE FONCTIONNEL via FormSubmit (envoi direct sur ton email) -->
                     <form id="contactForm" action="https://formsubmit.co/claudeatsou54@gmail.com" method="POST">
